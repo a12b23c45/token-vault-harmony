@@ -9,12 +9,14 @@ import NotFound from "./pages/NotFound";
 import { WagmiProvider, createConfig, http } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { injected } from 'wagmi/connectors';
 
 const wagmiConfig = createConfig({
   chains: [mainnet],
   transports: {
     [mainnet.id]: http(),
   },
+  connectors: [injected()],
   ssr: false,
 });
 

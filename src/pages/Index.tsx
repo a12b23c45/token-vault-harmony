@@ -22,7 +22,7 @@ const Index: React.FC = () => {
     <div className="min-h-screen bg-hero">
       <header className="container mx-auto py-6">
         <nav className="flex items-center justify-between">
-          <a href="/" className="text-lg font-semibold" aria-label="Token Manager home">
+          <a href="/" className="text-lg font-semibold font-display story-link" aria-label="Token Manager home">
             Token Manager
           </a>
           <ConnectButton />
@@ -40,8 +40,8 @@ const Index: React.FC = () => {
           (e.currentTarget as HTMLElement).style.setProperty("--y", y);
         }}
       >
-        <section className="py-14 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <section className="py-14 text-center animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-display">
             Token Management for Blockchain Portfolios
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl mb-8">
@@ -49,7 +49,7 @@ const Index: React.FC = () => {
           </p>
           {!isConnected && (
             <div className="flex items-center justify-center gap-3">
-              <Button variant="hero" asChild>
+              <Button variant="hero" asChild className="hover-scale">
                 <a href="#connect">Get Started</a>
               </Button>
               <div id="connect" className="sr-only" />

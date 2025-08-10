@@ -100,7 +100,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
@@ -113,4 +113,26 @@ All colors MUST be HSL.
   .elevated {
     box-shadow: 0 20px 40px -20px hsl(var(--primary) / 0.25);
   }
+  .story-link {
+    position: relative;
+  }
+  .story-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: hsl(var(--primary));
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  .story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hover-scale { transition: transform 0.2s ease; }
+  .hover-scale:hover { transform: scale(1.05); }
+  .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
 }
